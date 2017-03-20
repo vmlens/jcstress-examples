@@ -1,0 +1,6 @@
+com/vmlens/stressTest/tests/TypeVariableGetBounds_jcstress.class
+com/vmlens/stressTest/tests/TypeVariableGetBounds_jcstress$Pair.class
+org/openjdk/jcstress/infra/results/IntResult2_jcstress_c2.class
+META-INF/TestList
+org/openjdk/jcstress/infra/results/IntResult2_jcstress.class
+org/openjdk/jcstress/infra/results/IntResult2_jcstress_c1.class

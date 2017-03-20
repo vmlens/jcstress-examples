@@ -1,0 +1,352 @@
+
+<html>
+<head>
+<title>Java Concurrency Stress test report</title>
+ <style type="text/css">
+   * { font-family: Arial; }
+   table { font-size: 9pt; }
+   a { color: #000000; }
+   .progress { padding: 0px; }
+   .header { text-align: left; }
+   .section1 { font-size: 12pt; background-color: #BDB76B; color: #000000; font-weight: bold;}
+   .section2 { font-size: 12pt; background-color: #F0E68C; color: #000000; font-weight: bold;}
+   .cell1 { background-color: #FAFAD2; }
+   .cell2 { background-color: #EEE8AA; }
+   .passedProgress { background-color: #00AA00; color: #FFFFFF; text-align: center; font-weight: bold; }
+   .failedProgress { background-color: #FF0000; color: #FFFFFF; text-align: center; font-weight: bold; }
+   .passed { color: #00AA00; text-align: center; font-weight: bold; }
+   .failed { color: #FF0000; text-align: center; font-weight: bold; }
+   .interesting { color: #0000FF; text-align: center; font-weight: bold; }
+   .spec { color: #AAAA00; text-align: center; font-weight: bold; }
+   .endResult { font-size: 48pt; text-align: center; font-weight: bold; }
+ </style>
+</head>
+<body>
+<h1>com.vmlens.stressTest.tests.TypeVariableGetBounds</h1>
+<p>null</p>
+<p>JVM options: [-server, -XX:-TieredCompilation]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>7905940</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+<p>JVM options: [-Xint]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>1510620</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+<p>JVM options: [-XX:TieredStopAtLevel=1]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>6759210</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+<p><b>Auxiliary data</b></p>
+<pre>
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getObjectAddress(Ljava/lang/Object;)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getObjectSize(Ljava/lang/Object;)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isObjectInOldGen(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapOopSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getVMPageSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getVMLargePageSize()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::classKnownToNotExist(Ljava/lang/ClassLoader;Ljava/lang/String;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getLookupCacheURLs(Ljava/lang/ClassLoader;)[Ljava/net/URL;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getLookupCacheMatches(Ljava/lang/ClassLoader;Ljava/lang/String;)[I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::parseCommandLine(Ljava/lang/String;[Lsun/hotspot/parser/DiagnosticCommand;)[Ljava/lang/Object;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::addToBootstrapClassLoaderSearch(Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::addToSystemClassLoaderSearch(Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCompressedOopsMaxHeapSize()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::printHeapSizes()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::runMemoryUnitTests()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::readFromNoaccessArea()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::stressVirtualSpaceResize(JJJ)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1InConcurrentMark()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1IsHumongous(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1NumMaxRegions()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1NumFreeRegions()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1RegionSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1AuxiliaryMemoryUsage()Ljava/lang/management/MemoryUsage;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTMalloc(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTMallocWithPseudoStack(JI)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTFree(J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTReserveMemory(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTCommitMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTUncommitMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTReleaseMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTIsDetailSupported()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTChangeTrackingLevel()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTGetHashSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::deoptimizeMethod(Ljava/lang/reflect/Executable;Z)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodCompiled(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodCompilable(Ljava/lang/reflect/Executable;IZ)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodQueuedForCompilation(Ljava/lang/reflect/Executable;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::makeMethodNotCompilable(Ljava/lang/reflect/Executable;IZ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::testSetDontInlineMethod(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getMethodCompilationLevel(Ljava/lang/reflect/Executable;Z)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getMethodEntryBci(Ljava/lang/reflect/Executable;)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCompileQueueSize(I)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::testSetForceInlineMethod(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::enqueueMethodForCompilation(Ljava/lang/reflect/Executable;II)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::clearMethodState(Ljava/lang/reflect/Executable;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setBooleanVMFlag(Ljava/lang/String;Z)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setIntxVMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setUintxVMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setUint64VMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setDoubleVMFlag(Ljava/lang/String;D)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setStringVMFlag(Ljava/lang/String;Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getBooleanVMFlag(Ljava/lang/String;)Ljava/lang/Boolean;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getIntxVMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getUintxVMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getUint64VMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getDoubleVMFlag(Ljava/lang/String;)Ljava/lang/Double;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getStringVMFlag(Ljava/lang/String;)Ljava/lang/String;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isInStringTable(Ljava/lang/String;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::fullGC()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::youngGC()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::readReservedMemory()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::allocateMetaspace(Ljava/lang/ClassLoader;J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::freeMetaspace(Ljava/lang/ClassLoader;JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::incMetaspaceCapacityUntilGC(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::metaspaceCapacityUntilGC()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCPUFeatures()Ljava/lang/String;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getNMethod(Ljava/lang/reflect/Executable;Z)[Ljava/lang/Object;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMonitorInflated(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::forceSafepoint()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::printRegionInfo(I)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapUsageForContext(I)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapRegionCountForContext(I)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getContextForObject(Ljava/lang/Object;)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getOffsetForName0(Ljava/lang/String;)I
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x741ecb3c, pid=16111, tid=1679025248
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_65-b17) (build 1.8.0_65-b17)
+# Java VM: Java HotSpot(TM) Client VM (25.65-b01 mixed mode linux-arm )
+# Problematic frame:
+# J 495 C1 java.lang.ClassLoader.checkName(Ljava/lang/String;)Z (43 bytes) @ 0x741ecb3c [0x741ecb10+0x2c]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+Unsupported internal testing APIs have been used.
+
+# An error report file with more information is saved as:
+# /home/pi/vmlens/hs_err_pid16111.log
+Compiled method (c1)   22863  524   !         java.lang.ClassLoader::loadClass (122 bytes)
+ total in heap  [0x741e3f48,0x741e4d44] = 3580
+ relocation     [0x741e4014,0x741e40cc] = 184
+ main code      [0x741e40d0,0x741e4560] = 1168
+ stub code      [0x741e4560,0x741e4630] = 208
+ metadata       [0x741e4630,0x741e4650] = 32
+ scopes data    [0x741e4650,0x741e49fc] = 940
+ scopes pcs     [0x741e49fc,0x741e4b6c] = 368
+ dependencies   [0x741e4b6c,0x741e4b74] = 8
+ handler table  [0x741e4b74,0x741e4d18] = 420
+ nul chk table  [0x741e4d18,0x741e4d44] = 44
+Compiled method (c1)   22863  495             java.lang.ClassLoader::checkName (43 bytes)
+ total in heap  [0x741eca08,0x741ece0c] = 1028
+ relocation     [0x741ecad4,0x741ecb10] = 60
+ main code      [0x741ecb10,0x741ecc70] = 352
+ stub code      [0x741ecc70,0x741eccb0] = 64
+ oops           [0x741eccb0,0x741eccb4] = 4
+ metadata       [0x741eccb4,0x741eccc8] = 20
+ scopes data    [0x741eccc8,0x741ecd5c] = 148
+ scopes pcs     [0x741ecd5c,0x741ecdec] = 144
+ dependencies   [0x741ecdec,0x741ecdf0] = 4
+ nul chk table  [0x741ecdf0,0x741ece0c] = 28
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+Failed to delete stdout log: /tmp/jcstress6094785329153174762stdout
+Failed to delete stderr log: /tmp/jcstress6371090143371005300stderr
+</pre>
+
+<p>JVM options: [-client]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>6181240</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+<p><b>Auxiliary data</b></p>
+<pre>
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getObjectAddress(Ljava/lang/Object;)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getObjectSize(Ljava/lang/Object;)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isObjectInOldGen(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapOopSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getVMPageSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getVMLargePageSize()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::classKnownToNotExist(Ljava/lang/ClassLoader;Ljava/lang/String;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getLookupCacheURLs(Ljava/lang/ClassLoader;)[Ljava/net/URL;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getLookupCacheMatches(Ljava/lang/ClassLoader;Ljava/lang/String;)[I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::parseCommandLine(Ljava/lang/String;[Lsun/hotspot/parser/DiagnosticCommand;)[Ljava/lang/Object;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::addToBootstrapClassLoaderSearch(Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::addToSystemClassLoaderSearch(Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCompressedOopsMaxHeapSize()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::printHeapSizes()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::runMemoryUnitTests()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::readFromNoaccessArea()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::stressVirtualSpaceResize(JJJ)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1InConcurrentMark()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1IsHumongous(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1NumMaxRegions()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1NumFreeRegions()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1RegionSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::g1AuxiliaryMemoryUsage()Ljava/lang/management/MemoryUsage;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTMalloc(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTMallocWithPseudoStack(JI)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTFree(J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTReserveMemory(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTCommitMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTUncommitMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTReleaseMemory(JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTIsDetailSupported()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTChangeTrackingLevel()Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::NMTGetHashSize()I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::deoptimizeMethod(Ljava/lang/reflect/Executable;Z)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodCompiled(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodCompilable(Ljava/lang/reflect/Executable;IZ)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMethodQueuedForCompilation(Ljava/lang/reflect/Executable;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::makeMethodNotCompilable(Ljava/lang/reflect/Executable;IZ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::testSetDontInlineMethod(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getMethodCompilationLevel(Ljava/lang/reflect/Executable;Z)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getMethodEntryBci(Ljava/lang/reflect/Executable;)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCompileQueueSize(I)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::testSetForceInlineMethod(Ljava/lang/reflect/Executable;Z)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::enqueueMethodForCompilation(Ljava/lang/reflect/Executable;II)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::clearMethodState(Ljava/lang/reflect/Executable;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setBooleanVMFlag(Ljava/lang/String;Z)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setIntxVMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setUintxVMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setUint64VMFlag(Ljava/lang/String;J)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setDoubleVMFlag(Ljava/lang/String;D)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::setStringVMFlag(Ljava/lang/String;Ljava/lang/String;)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getBooleanVMFlag(Ljava/lang/String;)Ljava/lang/Boolean;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getIntxVMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getUintxVMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getUint64VMFlag(Ljava/lang/String;)Ljava/lang/Long;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getDoubleVMFlag(Ljava/lang/String;)Ljava/lang/Double;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getStringVMFlag(Ljava/lang/String;)Ljava/lang/String;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isInStringTable(Ljava/lang/String;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::fullGC()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::youngGC()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::readReservedMemory()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::allocateMetaspace(Ljava/lang/ClassLoader;J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::freeMetaspace(Ljava/lang/ClassLoader;JJ)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::incMetaspaceCapacityUntilGC(J)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::metaspaceCapacityUntilGC()J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getCPUFeatures()Ljava/lang/String;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getNMethod(Ljava/lang/reflect/Executable;Z)[Ljava/lang/Object;
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::isMonitorInflated(Ljava/lang/Object;)Z
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::forceSafepoint()V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::printRegionInfo(I)V
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapUsageForContext(I)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getHeapRegionCountForContext(I)J
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getContextForObject(Ljava/lang/Object;)I
+Warning: 'NoSuchMethodError' on register of sun.hotspot.WhiteBox::getOffsetForName0(Ljava/lang/String;)I
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x7665b4c0, pid=16112, tid=1680598112
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_65-b17) (build 1.8.0_65-b17)
+# Java VM: Java HotSpot(TM) Client VM (25.65-b01 mixed mode linux-arm )
+# Problematic frame:
+# V  [libjvm.so+0x27a4c0]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+Unsupported internal testing APIs have been used.
+
+# An error report file with more information is saved as:
+# /home/pi/vmlens/hs_err_pid16112.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+Failed to delete stdout log: /tmp/jcstress2433196707779039982stdout
+Failed to delete stderr log: /tmp/jcstress2972572753361164400stderr
+</pre>
+
+<p>JVM options: [-server]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>7043390</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+<p>JVM options: [-client, -XX:-TieredCompilation]
+Iterations: 10
+Time: 1000</p>
+<table width=100%>
+<tr>
+<th width=250>Observed state</th>
+<th width=50>Occurrence</th>
+<th width=50>Expectation</th>
+<th>Interpretation</th>
+</tr>
+<tr bgColor=#00ff00>
+<td>0, 0</td>
+<td align=center>6002970</td>
+<td align=center>ACCEPTABLE</td>
+<td>Default outcome.</td>
+</tr>
+</table>
+</body>
+</html>

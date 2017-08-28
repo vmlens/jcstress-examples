@@ -1,4 +1,8 @@
 /home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/util/GenericInterface.java
 /home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/util/StressTestClassLoader.java
+/home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/BigDecimalToString.java
+/home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/TestBigDecimal.java
 /home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/TypeVariableGetBounds.java
 /home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/DataRaceTest.java
+/home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/TimeZoneClone.java
+/home/thomas/git_external/jcstress-examples/src/main/java/com/vmlens/stressTest/tests/BigDecimalToString2.java

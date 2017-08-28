@@ -11,7 +11,7 @@ import org.openjdk.jcstress.infra.results.IntResult2;
 
 import com.vmlens.stressTest.util.StressTestClassLoader;
 
-@JCStressTest
+//@JCStressTest
 @Outcome(id = "0, 0", expect = Expect.ACCEPTABLE, desc = "Default outcome.")
 @State
 public class TypeVariableGetBounds {

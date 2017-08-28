@@ -1,4 +1,4 @@
-package com.vmlens.stressTest;
+package com.vmlens.stressTest.tests;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,17 +13,17 @@ import org.openjdk.jcstress.util.Counter;
 import org.openjdk.jcstress.vm.WhiteBoxSupport;
 import org.openjdk.jcstress.util.OpenAddressHashCounter;
 import java.util.concurrent.ExecutionException;
-import com.vmlens.stressTest.DataRaceTest;
-import org.openjdk.jcstress.infra.results.IntResult2_jcstress;
+import com.vmlens.stressTest.tests.BigDecimalToString;
+import org.openjdk.jcstress.infra.results.IntResult1_jcstress;
 
-public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
+public class BigDecimalToString_jcstress extends Runner<IntResult1_jcstress> {
 
-    OpenAddressHashCounter<IntResult2_jcstress> counter_actor1;
-    OpenAddressHashCounter<IntResult2_jcstress> counter_actor2;
+    OpenAddressHashCounter<IntResult1_jcstress> counter_actor1;
+    OpenAddressHashCounter<IntResult1_jcstress> counter_actor2;
     volatile StateHolder<Pair> version;
 
-    public DataRaceTest_jcstress(TestConfig config, TestResultCollector collector, ExecutorService pool) {
-        super(config, collector, pool, "com.vmlens.stressTest.DataRaceTest");
+    public BigDecimalToString_jcstress(TestConfig config, TestResultCollector collector, ExecutorService pool) {
+        super(config, collector, pool, "com.vmlens.stressTest.tests.BigDecimalToString");
     }
 
     @Override
@@ -33,9 +33,9 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
     }
 
     private void sanityCheck_API() throws Throwable {
-        final DataRaceTest t = new DataRaceTest();
-        final DataRaceTest s = new DataRaceTest();
-        final IntResult2_jcstress r = new IntResult2_jcstress();
+        final BigDecimalToString t = new BigDecimalToString();
+        final BigDecimalToString s = new BigDecimalToString();
+        final IntResult1_jcstress r = new IntResult1_jcstress();
         Collection<Future<?>> res = new ArrayList<>();
         res.add(pool.submit(() -> t.actor1(r)));
         res.add(pool.submit(() -> t.actor2(r)));
@@ -51,11 +51,11 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
     private void sanityCheck_Footprints() throws Throwable {
         config.adjustStrides(size -> {
             version = new StateHolder<>(new Pair[size], 2, config.spinLoopStyle);
-            final DataRaceTest t = new DataRaceTest();
+            final BigDecimalToString t = new BigDecimalToString();
             for (int c = 0; c < size; c++) {
                 Pair p = new Pair();
-                p.r = new IntResult2_jcstress();
-                p.s = new DataRaceTest();
+                p.r = new IntResult1_jcstress();
+                p.s = new BigDecimalToString();
                 version.pairs[c] = p;
                 p.s.actor1(p.r);
                 p.s.actor2(p.r);
@@ -64,7 +64,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
     }
 
     @Override
-    public Counter<IntResult2_jcstress> internalRun() {
+    public Counter<IntResult1_jcstress> internalRun() {
         version = new StateHolder<>(new Pair[0], 2, config.spinLoopStyle);
         counter_actor1 = new OpenAddressHashCounter<>();
         counter_actor2 = new OpenAddressHashCounter<>();
@@ -83,25 +83,24 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
 
         waitFor(tasks);
 
-        Counter<IntResult2_jcstress> counter = new OpenAddressHashCounter<>();
+        Counter<IntResult1_jcstress> counter = new OpenAddressHashCounter<>();
         counter.merge(counter_actor1);
         counter.merge(counter_actor2);
         return counter;
     }
 
-    public final void jcstress_consume(StateHolder<Pair> holder, OpenAddressHashCounter<IntResult2_jcstress> cnt, int a, int actors) {
+    public final void jcstress_consume(StateHolder<Pair> holder, OpenAddressHashCounter<IntResult1_jcstress> cnt, int a, int actors) {
         Pair[] pairs = holder.pairs;
         int len = pairs.length;
         int left = a * len / actors;
         int right = (a + 1) * len / actors;
         for (int c = left; c < right; c++) {
             Pair p = pairs[c];
-            IntResult2_jcstress r = p.r;
-            DataRaceTest s = p.s;
-            p.s = new DataRaceTest();
+            IntResult1_jcstress r = p.r;
+            BigDecimalToString s = p.s;
+            p.s = new BigDecimalToString();
             cnt.record(r);
             r.r1 = 0;
-            r.r2 = 0;
         }
     }
 
@@ -117,8 +116,8 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
             newPairs = Arrays.copyOf(pairs, newLen);
             for (int c = len; c < newLen; c++) {
                 Pair p = new Pair();
-                p.r = new IntResult2_jcstress();
-                p.s = new DataRaceTest();
+                p.r = new IntResult1_jcstress();
+                p.s = new BigDecimalToString();
                 newPairs[c] = p;
             }
          }
@@ -129,7 +128,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
 
     public final Void actor1() {
 
-        OpenAddressHashCounter<IntResult2_jcstress> counter = counter_actor1;
+        OpenAddressHashCounter<IntResult1_jcstress> counter = counter_actor1;
         while (true) {
             StateHolder<Pair> holder = version;
             if (holder.stopped) {
@@ -141,7 +140,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
             holder.preRun();
 
             for (Pair p : pairs) {
-                IntResult2_jcstress r = p.r;
+                IntResult1_jcstress r = p.r;
                 r.trap = 0;
                 p.s.actor1(r);
             }
@@ -157,7 +156,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
 
     public final Void actor2() {
 
-        OpenAddressHashCounter<IntResult2_jcstress> counter = counter_actor2;
+        OpenAddressHashCounter<IntResult1_jcstress> counter = counter_actor2;
         while (true) {
             StateHolder<Pair> holder = version;
             if (holder.stopped) {
@@ -169,7 +168,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
             holder.preRun();
 
             for (Pair p : pairs) {
-                IntResult2_jcstress r = p.r;
+                IntResult1_jcstress r = p.r;
                 r.trap = 0;
                 p.s.actor2(r);
             }
@@ -184,7 +183,7 @@ public class DataRaceTest_jcstress extends Runner<IntResult2_jcstress> {
     }
 
     static class Pair {
-        public DataRaceTest s;
-        public IntResult2_jcstress r;
+        public BigDecimalToString s;
+        public IntResult1_jcstress r;
     }
 }

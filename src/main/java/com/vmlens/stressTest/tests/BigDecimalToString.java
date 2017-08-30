@@ -6,8 +6,8 @@ import org.openjdk.jcstress.infra.results.IntResult1;
 @Outcome(id = "0", expect = Expect.ACCEPTABLE, desc = "Default outcome.")
 @State
 public class BigDecimalToString {
-	private  BigDecimal testBigDecimal = new BigDecimal("0.56");
-	private  String expected = new String("0.56"); 
+	private final  BigDecimal testBigDecimal = new BigDecimal("0.56");
+	private final  String expected = new String("0.56"); 
 	@Actor
 	public void actor1(IntResult1 r) {
         String value = testBigDecimal.toString();

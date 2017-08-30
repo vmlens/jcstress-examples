@@ -7,21 +7,13 @@ import org.openjdk.jcstress.infra.results.IntResult1;
 @State
 public class BigDecimalToString {
 	private final  BigDecimal testBigDecimal = new BigDecimal("0.56");
-	private final  String expected = new String("0.56"); 
 	@Actor
 	public void actor1(IntResult1 r) {
-        String value = testBigDecimal.toString();
-		if(  ! value.equals(expected) )
-		{
-			throw new RuntimeException(value + " " + value.getClass());
-		}	
+        testBigDecimal.toString().length();
+		
 	}
 	@Actor
 	public void actor2(IntResult1 r) {
-        String value = testBigDecimal.toString();
-		if(  ! value.equals(expected) )
-		{
-			throw new RuntimeException(value + " " + value.getClass());
-		}
+		testBigDecimal.toString().length();
 	}	
 }
